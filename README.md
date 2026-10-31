@@ -2,7 +2,7 @@
 
 Simulasi interaktif untuk memahami cara DVR mengatasi **sag, swell, dan interupsi** tegangan pada sistem tenaga listrik. Dibuat untuk proyek PBL Kualitas Daya.
 
-**Coba langsung:** https://USERNAME.github.io/NAMA-REPO/  *(ganti dengan link Anda)*
+**Coba langsung:** https://mensisstella179-cell.github.io/dvr-simulator/  *(ganti dengan link Anda)*
 
 ## Cara memakai
 
