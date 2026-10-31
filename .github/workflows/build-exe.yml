@@ -1,4 +1,4 @@
-name: Build DVRSimulator.exe
+name: Build DVRSimulator (Windows)
 
 on:
   workflow_dispatch:
@@ -13,24 +13,35 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Pasang dependensi
         working-directory: desktop
         run: pip install -r requirements.txt
+
       - name: Salin aplikasi web ke folder desktop
-        run: xcopy /E /I /Y docs desktop\app
         shell: cmd
-      - name: Build exe
+        run: xcopy /E /I /Y docs desktop\app
+
+      - name: Build aplikasi (mode folder)
         working-directory: desktop
-        run: pyinstaller --noconsole --onefile --name DVRSimulator --icon app.ico --add-data "app;app" main.py
-      - uses: actions/upload-artifact@v4
+        run: pyinstaller --noconsole --onedir --name DVRSimulator --icon app.ico --add-data "app;app" main.py
+
+      - name: Kompres hasil build
+        shell: pwsh
+        run: Compress-Archive -Path desktop/dist/DVRSimulator -DestinationPath desktop/dist/DVRSimulator-windows.zip
+
+      - name: Simpan sebagai artifact
+        uses: actions/upload-artifact@v4
         with:
           name: DVRSimulator-windows
-          path: desktop/dist/DVRSimulator.exe
+          path: desktop/dist/DVRSimulator-windows.zip
+
       - name: Lampirkan ke Release (hanya saat tag v*)
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: desktop/dist/DVRSimulator.exe
+          files: desktop/dist/DVRSimulator-windows.zip
