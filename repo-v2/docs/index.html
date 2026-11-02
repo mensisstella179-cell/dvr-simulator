@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d355d">
+<title>Simulasi Dynamic Voltage Restorer (DVR) – Pilih cara memakai</title>
+<link rel="icon" href="app/icons/icon-192.png">
+<style>
+:root{--bg:#f3f6fa;--card:#fff;--text:#1f2937;--muted:#4b5a6e;--bd:#d8e3ef;--navy:#0d355d;--blue:#1167a8;--ok:#198754;--warn:#b26a00}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1722;--card:#172233;--text:#e6edf5;--muted:#9fb1c6;--bd:#2a3b52;--navy:#134b7a;--blue:#4aa3e0;--ok:#4cc38a;--warn:#e7a23c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,"Segoe UI",Arial,sans-serif;line-height:1.5;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+header{background:linear-gradient(115deg,#071a33,#1167a8);color:#fff;padding:26px 16px;text-align:center}
+header h1{margin:0 0 6px;font-size:1.5rem}header p{margin:0;opacity:.92;font-size:.95rem}
+main{max-width:1050px;margin:0 auto;padding:16px;display:grid;gap:14px}
+.hint{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;font-size:.9rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-top:5px solid var(--c);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;position:relative}
+.card h2{margin:0;font-size:1.1rem}.tag{font-size:.75rem;font-weight:700;color:var(--c)}
+.card p,.card li{font-size:.9rem;color:var(--muted);margin:0}
+.card ol{margin:4px 0;padding-left:20px;display:grid;gap:4px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:11px 14px;border-radius:10px;background:var(--c);color:#fff;margin-top:auto}
+.btn.alt{background:transparent;color:var(--c);border:2px solid var(--c)}
+.badge{display:none;position:absolute;top:-11px;right:12px;background:var(--ok);color:#fff;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:99px}
+.card.me .badge{display:block}
+.c1{--c:var(--ok)}.c2{--c:var(--blue)}.c3{--c:var(--warn)}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;font-size:.9rem}
+summary{cursor:pointer;font-weight:700}details p,details li{color:var(--muted);margin:6px 0}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:6px 16px 22px}
+a{color:var(--blue)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Simulasi Dynamic Voltage Restorer (DVR)</h1>
+  <p>Pahami cara DVR mengatasi sag, swell, dan interupsi tegangan. Pilih cara memakai yang paling cocok untuk Anda.</p>
+</header>
+<main>
+  <div class="hint" id="hint">Pilih salah satu dari tiga cara di bawah ini. Cara 1 paling mudah dan cocok untuk hampir semua perangkat.</div>
+
+  <div class="grid">
+    <section class="card c1" id="c1">
+      <span class="badge">Cocok untuk perangkat Anda</span>
+      <span class="tag">CARA 1 · DISARANKAN</span>
+      <h2>Buka di browser atau pasang sebagai aplikasi</h2>
+      <p>Tanpa unduhan. Berjalan di Android, Windows, iPhone, dan Mac. Setelah dibuka sekali, bisa dipakai tanpa internet.</p>
+      <ol>
+        <li><b>Android:</b> buka di Chrome → menu ⋮ → <i>Instal aplikasi</i></li>
+        <li><b>Windows:</b> buka di Chrome/Edge → klik ikon instal di kotak alamat</li>
+        <li><b>iPhone:</b> buka di Safari → Bagikan → <i>Tambah ke Layar Utama</i></li>
+      </ol>
+      <a class="btn" href="app/">Buka simulasi</a>
+    </section>
+
+    <section class="card c2" id="c2">
+      <span class="badge">Cocok untuk perangkat Anda</span>
+      <span class="tag">CARA 2 · WINDOWS, OFFLINE</span>
+      <h2>Pintasan Windows</h2>
+      <p>Berkas kecil yang membuka simulasi di jendela aplikasi (Edge atau Chrome). Tanpa instalasi dan tanpa internet.</p>
+      <ol>
+        <li>Unduh berkas zip di bawah</li>
+        <li>Klik kanan → <i>Extract All</i></li>
+        <li>Klik dua kali <code>Buka-DVR-Simulator.bat</code></li>
+      </ol>
+      <a class="btn" href="https://github.com/mensisstella179-cell/dvr-simulator/releases/latest/download/dvr-windows-launcher.zip">Unduh pintasan (.zip)</a>
+      <a class="btn alt" style="margin-top:0" href="https://github.com/mensisstella179-cell/dvr-simulator/releases/latest">Halaman rilis</a>
+    </section>
+
+    <section class="card c3" id="c3">
+      <span class="badge">Cocok untuk perangkat Anda</span>
+      <span class="tag">CARA 3 · WINDOWS, EKSPERIMEN</span>
+      <h2>Aplikasi desktop (.exe)</h2>
+      <p>Aplikasi mandiri berbasis Python. Kadang diblokir antivirus atau gagal di komputer tertentu. Jika bermasalah, pakai Cara 1 atau 2.</p>
+      <ol>
+        <li>Unduh zip, lalu <i>Extract All</i></li>
+        <li>Jalankan <code>DVRSimulator.exe</code> di dalam folder</li>
+        <li>Jika muncul peringatan: <i>More info → Run anyway</i></li>
+      </ol>
+      <a class="btn" href="https://github.com/mensisstella179-cell/dvr-simulator/releases/latest/download/DVRSimulator-windows.zip">Unduh aplikasi (.zip)</a>
+    </section>
+  </div>
+
+  <details>
+    <summary>Bantuan jika unduhan tidak berjalan</summary>
+    <ul>
+      <li>Unduhan hanya tersedia jika pemilik sudah mengunggah berkasnya ke halaman <a href="https://github.com/mensisstella179-cell/dvr-simulator/releases/latest">Rilis</a>. Jika muncul "404", gunakan Cara 1.</li>
+      <li>Windows Defender memblokir berkas? Buka <i>Windows Security → Virus &amp; threat protection → Protection history → Allow on device</i>.</li>
+      <li>Tombol instal tidak muncul di Android? Pastikan memakai Chrome dan membuka lewat alamat <code>https://</code>.</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>Tentang simulasi ini</summary>
+    <p>Simulasi edukatif: DVR dimodelkan sebagai sumber tegangan seri ideal dengan batas tegangan, kVA, arus, dan energi DC. Mencakup sag, swell, dan interupsi, gangguan 3 fasa, antar fasa, dan 1 fasa–tanah, 11 skenario, uji otomatis, dan laporan otomatis. Inverter, trafo injeksi, rugi-rugi, PLL, dan switching tidak dimodelkan. Bukan alat desain sistem nyata.</p>
+    <p><a href="https://github.com/mensisstella179-cell/dvr-simulator">Lihat kode dan dokumentasi di GitHub</a></p>
+  </details>
+</main>
+<footer>Proyek PBL Kualitas Daya · dibuat dengan HTML, JavaScript, dan GitHub Pages</footer>
+<script>
+(function(){
+  var ua=navigator.userAgent||'',$=function(i){return document.getElementById(i)};
+  var win=/Windows/i.test(ua),and=/Android/i.test(ua),ios=/iPhone|iPad|iPod/i.test(ua);
+  var mark=function(ids){ids.forEach(function(i){$(i).classList.add('me')})};
+  if(win){mark(['c1','c2']);$('hint').textContent='Anda memakai Windows: Cara 1 (browser/aplikasi) paling mudah, Cara 2 cocok untuk dipakai offline.'}
+  else if(and){mark(['c1']);$('hint').textContent='Anda memakai Android: pilih Cara 1, lalu pasang lewat menu Chrome. Cara 2 dan 3 hanya untuk Windows.'}
+  else if(ios){mark(['c1']);$('hint').textContent='Anda memakai iPhone/iPad: pilih Cara 1. Cara 2 dan 3 hanya untuk Windows.'}
+  else{mark(['c1']);$('hint').textContent='Pilih Cara 1 untuk memakai langsung di browser. Cara 2 dan 3 khusus Windows.'}
+  if(!win){['c2','c3'].forEach(function(i){$(i).style.opacity='.75'})}
+})();
+</script>
+</body>
+</html>
