@@ -24,7 +24,7 @@ jobs:
 
       - name: Salin aplikasi web ke folder desktop
         shell: cmd
-        run: xcopy /E /I /Y docs desktop\app
+        run: xcopy /E /I /Y docs\app desktop\app
 
       - name: Build aplikasi (mode folder)
         working-directory: desktop
