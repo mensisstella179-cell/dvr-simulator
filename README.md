@@ -2,7 +2,8 @@
 
 Simulasi interaktif untuk memahami cara DVR mengatasi **sag, swell, dan interupsi** tegangan pada sistem tenaga listrik. Dibuat untuk proyek PBL Kualitas Daya.
 
-**Buka langsung:** https://mensisstella179-cell.github.io/dvr-simulator/
+**Halaman pilihan cara memakai:** https://mensisstella179-cell.github.io/dvr-simulator/  
+**Langsung ke aplikasi:** https://mensisstella179-cell.github.io/dvr-simulator/app/
 
 ## Cara memakai (pilih salah satu)
 
@@ -39,11 +40,12 @@ Jika `.exe` diblokir antivirus atau gagal terbuka (error `Python.Runtime`), paka
 Model edukatif: DVR dianggap sumber tegangan seri ideal. Inverter, trafo injeksi, rugi-rugi, PLL, switching, dan lompatan fasa tidak dimodelkan. Gangguan memakai pendekatan Thevenin (arus sebelum gangguan diabaikan). Hasil belum dibandingkan dengan simulator rangkaian seperti Simulink atau PSCAD. **Bukan alat desain sistem nyata.**
 
 ## Struktur repositori
-- `docs/` aplikasi web (PWA), sekaligus sumber GitHub Pages
+- `docs/` halaman pilihan cara memakai (GitHub Pages)
+- `docs/app/` aplikasi simulasi (PWA)
 - `desktop/` pembungkus Python (pywebview) untuk `.exe`
 - `.github/workflows/` pembangunan `.exe` otomatis di GitHub
 
 ## Pengembang
-- Jalankan lokal: buka `docs/index.html` di browser.
+- Jalankan lokal: buka `docs/app/index.html` di browser.
 - Versi desktop: `desktop\run.bat` (Windows).
-- Setelah mengubah `docs/index.html`, naikkan nama cache di `docs/sw.js` (misalnya `dvr-v7-5` menjadi `dvr-v7-6`) agar pengguna yang sudah memasang mendapat versi terbaru.
+- Setelah mengubah `docs/app/index.html`, naikkan nama cache di `docs/app/sw.js` (misalnya `dvr-v7-6` menjadi `dvr-v7-7`) agar pengguna yang sudah memasang mendapat versi terbaru.
